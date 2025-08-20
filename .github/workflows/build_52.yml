@@ -1,0 +1,33 @@
+name: Java CI
+
+# Trigger workflow on push to these branches
+on:
+  push:
+    branches:
+      - master
+      - Calculator
+      - feature/grade
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Java (use Java 17 or your version)
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 3️⃣ Compile Java code
+      - name: Compile Java
+        run: javac -d out $(find . -name "*.java")
+
+      # 4️⃣ Optionally list compiled files
+      - name: List compiled classes
+        run: ls -R out
