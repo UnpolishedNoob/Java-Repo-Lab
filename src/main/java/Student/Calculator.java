@@ -7,10 +7,10 @@ public class Calculator {
     public float Sub(float a,float b){
         return a-b;
     }
-    public float mul(float a,float b){
+    public float Mul(float a,float b){
         return a*b;
     }
-    public float div(float a,float b){
+    public float Div(float a,float b){
         if(b==0){
             throw new ArithmeticException("Cannot divide by zero");
         }
