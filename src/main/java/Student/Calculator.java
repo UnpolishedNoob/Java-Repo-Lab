@@ -1,18 +1,18 @@
 package Student;
 
 public class Calculator {
-    public double add(float a,float b){  // changed Add → add
+    public double Add(float a,float b){
         return  a+b;
     }
-    public double sub(float a,float b){  // changed Sub → sub
+    public double Sub(float a,float b){
         return a-b;
     }
-    public double mul(float a,float b){
+    public double Mul(float a,float b){
         return a*b;
     }
-    public double div(float a,float b){
+    public double Div(float a,float b){
         if(b==0){
-            throw new ArithmeticException("Division by zero!"); // also changed message
+            throw new ArithmeticException("Cannot divide by zero");
         }
         return a/b;
     }
